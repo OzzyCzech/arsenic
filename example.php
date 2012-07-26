@@ -5,7 +5,7 @@
 
 require_once 'Arsenic.php';
 Arsenic::comment('Logout')->open('/logout')->deleteCookie('PHPSESSID')->open('/');
-Arsenic::toFile('logout.html', 'Logout from application');
+Arsenic::toFile('logout.html', 'Logout from application', false);
 
 // login
 Arsenic::comment('Login to application');
