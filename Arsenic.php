@@ -139,6 +139,18 @@ class Arsenic {
 	}
 
 	/**
+	 * @param string $class
+	 * @return \Arsenic
+	 */
+	public static function useClass($class, $root = null) {
+		foreach (get_class_methods($class) as $test) {
+			$class::$test();
+			Arsenic::toFile($root . str_replace('_', DIRECTORY_SEPARATOR, $test) . '.html');
+		}
+		return self::getInstance();
+	}
+
+	/**
 	 * Reset flow
 	 *
 	 * @return Arsenic
