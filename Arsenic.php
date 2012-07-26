@@ -1,30 +1,25 @@
 <?php
 /**
- * Simple Selenium IDE Flow generator
+ * Simple Selenium Flow generator
  *
  * @author Roman Ozana <ozana@omdesign.cz>
  *
- * @method SeleniumFlow open
- * @method SeleniumFlow verifyElementPresent
- * @method SeleniumFlow verifyElementNotPresent
- * @method SeleniumFlow verifyTextPresent
- * @method SeleniumFlow assertTitle
- * @method SeleniumFlow deleteCookie
- * @method SeleniumFlow waitForPageToLoad
- * @method SeleniumFlow clickAndWait
- * @method SeleniumFlow click
- * @method SeleniumFlow chooseOkOnNextConfirmation
- * @method SeleniumFlow assertConfirmation
- * @method SeleniumFlow waitForVisible
- * @method SeleniumFlow type
- * @method SeleniumFlow store
- *
- * etc..
- *
- * @todo store valid HTML Selenium IDE test
- * @todo autogenerate selenium suit from tests
+ * @method static Arsenic open
+ * @method static Arsenic verifyElementPresent
+ * @method static Arsenic verifyElementNotPresent
+ * @method static Arsenic verifyTextPresent
+ * @method static Arsenic assertTitle
+ * @method static Arsenic deleteCookie
+ * @method static Arsenic waitForPageToLoad
+ * @method static Arsenic clickAndWait
+ * @method static Arsenic click
+ * @method static Arsenic chooseOkOnNextConfirmation
+ * @method static Arsenic assertConfirmation
+ * @method static Arsenic waitForVisible
+ * @method static Arsenic type
+ * @method static Arsenic store
  */
-class SeleniumFlow {
+class Arsenic {
 
 	/** @var array */
 	private $flow = array();
@@ -42,7 +37,7 @@ class SeleniumFlow {
 	/**
 	 * @param string $method
 	 * @param array<> $args
-	 * @return SeleniumFlow
+	 * @return Arsenic
 	 */
 	public function __call($method, array $args) {
 		$this->flow[] = sprintf(
@@ -53,17 +48,17 @@ class SeleniumFlow {
 	}
 
 	/**
-	 * @param SeleniumFlow $seleniumFlow
-	 * @return SeleniumFlow
+	 * @param Arsenic $Arsenic
+	 * @return Arsenic
 	 */
-	public function inc(SeleniumFlow $seleniumFlow) {
-		$this->flow[] = (string)$seleniumFlow;
+	public function inc(Arsenic $Arsenic) {
+		$this->flow[] = (string)$Arsenic;
 		return $this;
 	}
 
 	/**
 	 * @param string $text
-	 * @return SeleniumFlow
+	 * @return Arsenic
 	 */
 	public function comment($text) {
 		$this->flow[] = sprintf("<!--'%s'-->", htmlentities($text));

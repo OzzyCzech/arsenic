@@ -3,7 +3,7 @@
  * @author Roman Ozana <ozana@omdesign.cz>
  */
 
-require_once 'SeleniumFlow.php';
+require_once 'Arsenic.php';
 
 // logout
 $logout = new SeleniumFlow();
