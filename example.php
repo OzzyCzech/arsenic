@@ -4,34 +4,22 @@
  */
 
 require_once 'Arsenic.php';
-
-// logout
-$logout = new SeleniumFlow();
-$logout->open('/logout')->deleteCookie('PHPSESSID')->open('/');
+Arsenic::comment('Logout')->open('/logout')->deleteCookie('PHPSESSID')->open('/');
+Arsenic::toFile('logout.html', 'Logout from application');
 
 // login
-$login = new SeleniumFlow();
-$login->waitForVisible($loginForm = '//form[@id="loginForm"]');
-$login->click('//a[@id="showLoginForm"]');
-$login->type($loginForm . '//input[@id="email"]', 'email@gmail.com');
-$login->type($loginForm . '//input[@id="password"]', '123456');
-$login->clickAndWait($loginForm . '//input[@type="submit"]');
-$login->waitForPageToLoad(3000);
-
-
-// poskladani testu
-$sel = new SeleniumFlow('test404Page');
-$sel->comment('komentar do selenia IDE');
-$sel->inc($logout);
-$sel->inc($login);
+Arsenic::comment('Login to application');
+Arsenic::waitForVisible($loginForm = '//form[@id="loginForm"]');
+Arsenic::click('//a[@id="showLoginForm"]');
+Arsenic::type($loginForm . '//input[@id="email"]', 'email@gmail.com');
+Arsenic::type($loginForm . '//input[@id="password"]', '123456');
+Arsenic::clickAndWait($loginForm . '//input[@type="submit"]');
+Arsenic::waitForPageToLoad(3000);
+Arsenic::toFile('loginLogout.html', 'Login and logout');
 
 // repeats
 for ($i = 0; $i < 5; $i++) {
-	$sel->open('/404/' . $i);
+	Arsenic::open('/404/' . $i);
 }
 
-$sel->open('/404');
-$sel->verifyElementPresent('/body[contains, "pageNotFound"]');
-$sel->inc($logout); // nakonci se odhlasim
-
-echo $sel;
+Arsenic::toFile('example.html', 'title');
