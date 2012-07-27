@@ -9,6 +9,8 @@
  * @method static Arsenic verifyElementPresent
  * @method static Arsenic verifyElementNotPresent
  * @method static Arsenic verifyTextPresent
+ * @method static Arsenic verifyTextNotPresent
+ * @method static Arsenic verifyText
  * @method static Arsenic assertTitle
  * @method static Arsenic deleteCookie
  * @method static Arsenic waitForPageToLoad
@@ -20,10 +22,12 @@
  * @method static Arsenic waitForElementPresent
  * @method static Arsenic type
  * @method static Arsenic store
+ * @method static Arsenic storeValue
  * @method static Arsenic storeAttribute
  * @method static Arsenic chooseOkOnNextConfirmation
  * @method static Arsenic assertBodyText
  * @method static Arsenic verifyXpathCount
+ * @method static Arsenic waitForTextPresent
  */
 class Arsenic {
 
