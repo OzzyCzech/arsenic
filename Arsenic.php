@@ -28,6 +28,8 @@
  * @method static Arsenic assertBodyText
  * @method static Arsenic verifyXpathCount
  * @method static Arsenic waitForTextPresent
+ * @method static Arsenic storeLocation
+ * @method static Arsenic storeEval
  */
 class Arsenic {
 
