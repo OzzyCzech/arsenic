@@ -95,7 +95,8 @@ class Arsenic {
 	 * @return Arsenic
 	 */
 	public static function __callStatic($method, array $args) {
-		self::cmd($method, isset($args[0]) ? $args[0] : null, isset($args[1]) ? $args[1] : null);
+		array_unshift($args, $method);
+		call_user_func_array(array(__CLASS__, 'cmd'), $args);
 		return self::getInstance();
 	}
 
@@ -103,7 +104,8 @@ class Arsenic {
 	 * @return Arsenic
 	 */
 	public function __call($method, array $args) {
-		$this->cmd($method, $args[0], isset($args[1]) ? $args[1] : null);
+		array_unshift($args, $method);
+		call_user_func_array(array($this, 'cmd'), $args);
 		return $this;
 	}
 
@@ -140,12 +142,12 @@ class Arsenic {
 	 * @param null|string $value
 	 * @return \Arsenic
 	 */
-	public static function cmd($command, $target = null, $value = null) {
+	public static function cmd($command, $target = null, $value = null, $escape = true) {
 		self::getInstance()->flow[] = sprintf(
 			"\t\t\t<tr>\n\t\t\t\t<td>%s</td>\n\t\t\t\t<td>%s</td>\n\t\t\t\t<td>%s</td>\n\t\t\t</tr>",
 			$command,
-			htmlentities($target),
-			htmlentities($value)
+			$escape ? htmlentities($target) : $target,
+			$escape ? htmlentities($value) : $value
 		);
 		return self::getInstance();
 	}
