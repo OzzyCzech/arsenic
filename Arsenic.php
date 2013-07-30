@@ -157,6 +157,9 @@ class Arsenic {
 	 */
 	public static function toFile($file, $title = null, $reset = true) {
 		if ($title === null) $title = basename($file, '.html');
+		if (strpos($file, DIRECTORY_SEPARATOR) !== false) {
+			@mkdir(self::$outputDir . dirname($file));
+		}
 		file_put_contents(
 			self::$outputDir . $file, sprintf(self::TEST_HTML, $title, $title, self::ALERT . PHP_EOL . self::getInstance())
 		);
