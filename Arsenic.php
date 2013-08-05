@@ -22,6 +22,7 @@
  * @method static Arsenic waitForElementPresent
  * @method static Arsenic type
  * @method static Arsenic store
+ * @method static Arsenic storeText
  * @method static Arsenic storeValue
  * @method static Arsenic storeAttribute
  * @method static Arsenic assertBodyText
