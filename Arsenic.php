@@ -24,7 +24,6 @@
  * @method static Arsenic store
  * @method static Arsenic storeValue
  * @method static Arsenic storeAttribute
- * @method static Arsenic chooseOkOnNextConfirmation
  * @method static Arsenic assertBodyText
  * @method static Arsenic verifyXpathCount
  * @method static Arsenic waitForTextPresent
@@ -101,6 +100,8 @@ class Arsenic {
 	}
 
 	/**
+	 * @param $method
+	 * @param array $args
 	 * @return Arsenic
 	 */
 	public function __call($method, array $args) {
@@ -140,6 +141,7 @@ class Arsenic {
 	 * @param string $command
 	 * @param null|string $target
 	 * @param null|string $value
+	 * @param bool $escape
 	 * @return \Arsenic
 	 */
 	public static function cmd($command, $target = null, $value = null, $escape = true) {
@@ -155,6 +157,7 @@ class Arsenic {
 	/**
 	 * @param string $file
 	 * @param string $title
+	 * @param bool $reset
 	 * @return \Arsenic
 	 */
 	public static function toFile($file, $title = null, $reset = true) {
@@ -173,6 +176,7 @@ class Arsenic {
 	/**
 	 * @param string $file
 	 * @param string $title
+	 * @param string $pathPrefix
 	 * @return \Arsenic
 	 */
 	public static function saveSuite($file, $title = 'Test Suite', $pathPrefix = './') {
