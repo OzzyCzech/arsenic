@@ -180,14 +180,14 @@ class Arsenic {
 	 * @param string $pathPrefix
 	 * @return \Arsenic
 	 */
-	public static function saveSuite($file, $title = 'Test Suite', $pathPrefix = './') {
+	public static function saveSuite($file, $suiteTitle = 'Test Suite', $pathPrefix = './') {
 		$links = '';
 		foreach (self::getInstance()->files as $test => $title) {
 			$links .= "\n\t\t" . sprintf(
 				"<tr>\n\t\t\t<td><a href=\"%s\">%s</a></td>\n\t\t</tr>", $pathPrefix . $test, $title
 			);
 		}
-		file_put_contents(self::$outputDir . $file, sprintf(self::SUITE_HTML, $title, $title, $links));
+		file_put_contents(self::$outputDir . $file, sprintf(self::SUITE_HTML, $suiteTitle, $suiteTitle, $links));
 		return self::getInstance();
 	}
 
