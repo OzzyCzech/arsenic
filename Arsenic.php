@@ -5,31 +5,33 @@
  * @author Roman Ozana <ozana@omdesign.cz>
  * @see https://github.com/OzzyCzech/arsenic
  *
- * @method static Arsenic open
- * @method static Arsenic verifyElementPresent
- * @method static Arsenic verifyElementNotPresent
- * @method static Arsenic verifyTextPresent
- * @method static Arsenic verifyTextNotPresent
- * @method static Arsenic verifyText
- * @method static Arsenic assertTitle
- * @method static Arsenic deleteCookie
- * @method static Arsenic waitForPageToLoad
- * @method static Arsenic clickAndWait
- * @method static Arsenic click
- * @method static Arsenic chooseOkOnNextConfirmation
- * @method static Arsenic assertConfirmation
- * @method static Arsenic waitForVisible
- * @method static Arsenic waitForElementPresent
- * @method static Arsenic type
- * @method static Arsenic store
- * @method static Arsenic storeText
- * @method static Arsenic storeValue
- * @method static Arsenic storeAttribute
- * @method static Arsenic assertBodyText
- * @method static Arsenic verifyXpathCount
- * @method static Arsenic waitForTextPresent
- * @method static Arsenic storeLocation
- * @method static Arsenic storeEval
+ * @method static Arsenic open()
+ * @method static Arsenic verifyElementPresent()
+ * @method static Arsenic verifyElementNotPresent()
+ * @method static Arsenic verifyTextPresent()
+ * @method static Arsenic verifyTextNotPresent()
+ * @method static Arsenic verifyText()
+ * @method static Arsenic assertTitle()
+ * @method static Arsenic deleteCookie()
+ * @method static Arsenic waitForPageToLoad()
+ * @method static Arsenic clickAndWait()
+ * @method static Arsenic click()
+ * @method static Arsenic chooseOkOnNextConfirmation()
+ * @method static Arsenic assertConfirmation()
+ * @method static Arsenic waitForVisible()
+ * @method static Arsenic waitForElementPresent()
+ * @method static Arsenic type()
+ * @method static Arsenic store()
+ * @method static Arsenic storeText()
+ * @method static Arsenic storeValue()
+ * @method static Arsenic storeAttribute()
+ * @method static Arsenic assertBodyText()
+ * @method static Arsenic verifyXpathCount()
+ * @method static Arsenic waitForTextPresent()
+ * @method static Arsenic storeLocation()
+ * @method static Arsenic storeEval()
+ * @method static Arsenic assertElementNotPresent()
+ * @method static Arsenic assertElementPresent()
  */
 class Arsenic {
 
