@@ -176,8 +176,9 @@ class Arsenic {
 
 	/**
 	 * @param string $file
-	 * @param string $title
+	 * @param string $suiteTitle
 	 * @param string $pathPrefix
+	 * @internal param string $title
 	 * @return \Arsenic
 	 */
 	public static function saveSuite($file, $suiteTitle = 'Test Suite', $pathPrefix = './') {
